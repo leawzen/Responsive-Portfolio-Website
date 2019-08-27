@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.nav {
+  font-size: 1.3rem;
+  background: #26c6da;
+  width: 100%;
+  line-height: 1.5rem;
+  display: flex; }
+  .nav .company-name {
+    padding: 0.6rem;
+    font-weight: bold; }
+  .nav-container {
+    transition: all 0.5s ease-out, opacity 0s ease-out;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .nav-container-item {
+      padding: 0.6rem;
+      text-align: center; }
+      .nav-container-item:active {
+        opacity: 0.9;
+        background-color: red; }
+      .nav-container-item:hover {
+        background-color: #26c6da;
+        cursor: pointer; }
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 15px;
+    grid-column: -2/-1; }
+    .nav-burger-line {
+      width: 23px;
+      height: 3px;
+      background-color: black;
+      margin-bottom: 4px;
+      align-self: flex-end; }
+
+@media only screen and (max-width: 700px) {
+  .nav {
+    justify-content: space-between;
+    flex-wrap: wrap; }
+  .nav-container {
+    max-height: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%; }
+    .nav-container-item.show {
+      width: 100%;
+      visibility: visible; }
+    .nav-container.show {
+      max-height: 500px;
+      opacity: 1; }
+  .nav-burger {
+    display: flex;
+    cursor: pointer; } }
